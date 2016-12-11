@@ -20,7 +20,7 @@ alter table table_test add primary key(id);
 
 4. mysql 直接有md5函数：
 update user set passwd=md5("123321") where uName="lihua";
-dkkk
+dkkkdd
 
 
 
