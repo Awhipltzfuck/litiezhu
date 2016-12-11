@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "基本知识"
+date:   2015-10-31 09:53:49
+categories: redis
+tags: redis
+---
+1. info
+
+used_memory:832784                          # Redis 分配的内存总量<br>
+used_memory_human:813.27K<br>
+used_memory_rss:1896448                     # Redis 分配的内存总量(包括内存碎片)<br>
+
+2. hash hdel某个值注意：
+
+  del 1080::2265  86100300900000100000060ae70600ac  是hdel，这样会删除所有的1080::2265 --非常危险！！
+
+
+
+
+
+
+注：如果只是浮于表面，只会if else，逻辑处理，简单只是运用，根本不可能看一些python相关源码，django之类的，例如单例／装饰器／描述符／上下文／元类等等，所以必须要深进去！！
+
+
+ 

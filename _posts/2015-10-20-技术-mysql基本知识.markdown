@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "mysql基本知识"
+date:   2015-10-31 09:53:49
+categories: 技术
+tags: 技术
+---
+1. mysql错误日志：
+
+ OperationalError: (OperationalError) (1030, 'Got error 28 from storage engine') ： mysql所在服务器磁盘满了！
+
+2. 查询表中多余的重复记录（多个字段）！：
+
+SELECT * FROM table WHERE (mail_id,phone) IN (SELECT mail_id,phone FROM table GROUP BY mail_id,phone HAVING 
+
+COUNT(*) > 1);
+
+3. 添加主键
+alter table table_test add primary key(id);
+
+4. mysql 直接有md5函数：
+update user set passwd=md5("123321") where uName="lihua";
+dkkk
+
+
+
+ 

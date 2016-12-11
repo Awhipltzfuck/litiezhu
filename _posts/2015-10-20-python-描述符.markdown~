@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "描述符"
+date:   2015-12-09 09:53:49
+categories: 深入python
+tags: 深入python
+---
+1. 没有3目运算符，不过可以写一行if
+
+2. file也是一种内置类型，可以使用dir(file)查看属性
+
+3. redis.__file__查看模块路径，就可以查看源代码
+
+4. easy_install pip #pip 安装python模块
+
+4. google.protobuf在线安装：
+
+  pip install protobuf
+
+
+5. pip install pylint
+
+6. pylint非常推荐的静态代码检查工具。
+
+    W: 10, 0: Unused import help (unused-import)<br>
+   报告中安装上述的格式生成检查结果，W代表生成的检查级别，级别分为4种：error， warning， refactor， convention；可以根据首字母来对应相应的级别。"10, 0" 代表告警所在源码文件中的行号和列号，可以通过Eclipse中CTRL+L快捷键快速查找所在到问题所在的行。“Unused import help"表述问题的详细信息。”(unused-import)为问题的消息ID信息。
+
+6. 推导式(Comprehensions)：md5排序，都可以考虑用哈，已经用过一个了！
+
+    列表推导也可能会有一些负面效应，那就是整个列表必须一次性加载于内存之中，这对上面举的例子而言不是问题，甚至扩大若干倍之后也都不是问题。但是总会达到极限，内存总会被用完.针对上面的问题，生成器(Generator)能够很好的解决。生成器表达式不会一次将整个列表加载到内存之中，而是生成一个生成器对象(Generator objector)，所以一次只加载一个列表元素<br>
+
+    生成器表达式同列表推导式有着几乎相同的语法结构，区别在于生成器表达式是被圆括号包围，而不是方括号：除非特殊的原因，应该经常在代码中使用生成器表达式。但除非是面对非常大的列表，否则是不会看出明显区别的。<br>
+
+    num = [1, 4, -5, 10, -7, 2, 3, -1]<br>
+
+    filtered_and_squared = ( x**2 for x in num if x > 0 )<br>
+
+
+7. zip（已购接口用过）：<br>
+
+alist = ['a1', 'a2', 'a3']<br>
+blist = ['1', '2', '3']<br>
+for a, b in zip(alist, blist):<br>
+    print a, b<br>
+
+
+
+注：如果只是浮于表面，只会if else，逻辑处理，简单只是运用，根本不可能看一些python相关源码，django之类的，例如单例／装饰器／描述符／上下文／元类等等，所以必须要深进去！！
+
+8. Python的对象不一定要有__init__方法，无论它是基类还是子类。因为__init__不是构造函数，Python对象在调用__init__的时候已被构造出来，称为“初始化”比较合适。
+
+9. hashlib的md5：
+
+	- digest():    Return the digest of the strings passed to the update() method
+	               so far. This may contain non-ASCII characters, including
+	               NUL bytes.<br>
+	- hexdigest(): Like digest() except the digest is returned as a string of
+	               double length, containing only hexadecimal digits.
+
+10. 如果你只是简单地想依据名字导入一个模块，请使用importlib.import_module()
+
+11. dict排序：
+
+	# 按照key进行排序 
+	print sorted(dict1.items(), key=lambda d: d[0]) 
+	# 按照value进行排序 
+	print sorted(dict1.items(), key=lambda d: d[1]) 
+
+	下面给出python内置sorted函数的帮助文档：sorted(iterable, cmp=None, key=None, reverse=False) --> new sorted list 
+
+	看了上面这么多种对dictionary排序的方法，其实它们的核心思想都一样，即把dictionary中的元素分离出来放到一个list中，对list
+
+	排序，从而间接实现对dictionary的排序。这个“元素”可以是key，value或者item。 
+
+
+
+
+
+
+
+ 

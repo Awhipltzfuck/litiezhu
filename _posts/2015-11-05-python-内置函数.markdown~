@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "内置函数"
+date:   2015-11-05 09:53:49
+categories: 深入python
+tags: 深入python
+---
+1. divmod(x,y)函数完成除法运算，返回商和余数
+
+2. min(x[,y,z...])，max
+
+3. range： range(1,10,2)
+
+4. xrange： xrange([lower,]stop[,step])
+
+5. isinstance(object,class-or-type-or-tuple) -> bool
+
+6. type()函数可返回对象的数据类型。
+
+7. filter(function,list)／map(function,list[,list])／reduce(function,seq[,init])
+
+8. all(iterable)／any(iterable)
+
+9. id(object)： 返回对象的“标识”。这是一个整数（或长整数），保证在对象的生命期内唯一且不变。
+
+10. dir(): 因为dir()主要是为了在交互式环境下使用方便，它尝试提供有意义的名字的集合，而不是提供严格或一致定义的名字的集合，且在不
+
+同的版本中，具体的行为也有所变化。例如，如果参数是一个类，那么元类属性就不会出现在结果中。
+11. help(对象或者模块之类的)挺好用
+
+12. hash(object): 返回对象的hash（哈希/散列）值（如果有的话）。hash值是整数。它被用于在字典查找时快速比较字典的键。相同的数值有相同的hash（尽管它们有不同的类型，比如1和1.0）
+
+23. object(): 返回一个新的无特征的对象。object是所有新式类的基类。它有对所有新式类的实例通用的方法
+
+24. reload(): 内建函数可以重新导入一个已经全部被成功导入的模块，reload()函数的参数必须是模块自身。模块中的代码在导入时被执行，但是只执行一次，以后执行Import时不会在执行这些代码，只是绑定模块名称。reload会重新加载已加载的模块，但原来已经使用的实例还是会使用旧的模块，而新生产的实例会使用新的模块；reload后还是用原来的内存地址；不能支持from。。import。。格式的模块进行重新加载。
+
+25. set([iterable]): 返回一个新的set 对象，其元素可以从可选的iterable获得。会去重的。
+
+26. raw_input([prompt]): 如果有prompt参数，则将它输出到标准输出且不带换行。该函数然后从标准输入读取一行，将它转换成一个字符串（去掉一个末尾的换
+
+行符），然后返回它。当读到EOF时，则引发EOFError。
+
+27. bin(x): 将一个整数转化成一个二进制字符串。结果是一个合法的Python表达式。
+
+28. zip([iterable, ...]): 该函数返回一个以元组为元素的列表，第 i 个元组包含每个参数序列的第 i 个元素。返回的列表长度被截断为最短的参数序列的长度。
+
+29. eval() 慎用，比较危险
+
+30. repr(object)
+返回某个对象可打印形式的字符串
+
+
+ 

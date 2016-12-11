@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "基本知识"
+date:   2015-10-31 09:53:49
+categories: git
+tags: git
+---
+1. 提交了一个分支，如果本地代码删了，那么pull后 + cherry-pick刚才的分支，那么push即可,或者改动 --amend 会基于同一个changeid。
+
+2. git log -p filename  查看某个文件的变化。
+
+3. git 如果没有配置email或者用户名 提交后 回提示，，就算用git config 好了后 需要新建个分支，把之前的cherry-pick
+
+过来即可,--amend不知道是否可以？
+
+4. 没有commit-msg的话，也一样同上3  --amend  不知道是否可以？
+
+5. Git 提供了一系列的脚本，你可以在 git 每一个有实质意义的阶段让它们自动运行。这些脚本就是 hooks，可以在 commit/rebase/pull…. 的前后运行。脚本的名字表示它什么时候被运行。例如一个有用的预推送 hook 可能会测试关于保持远程仓库一致性的式样原则。
+
+6. 分支，标签，HEAD 都是一家人：由此表明分支和标签就是一个提交的指针
+
+7. 如果abandon，同一changeid，删了重来即可：如果abandon了，再git commit --amend，此时需要删除changeid即可，会自动生成一个新的。
+
+8.
+
+
+
+ 

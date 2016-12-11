@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "基的的的"
+date:   2015-11-31 09:53:49
+categories: 读书
+tags: 读书
+---
+1. find / -name your_file_name  # 全盘查找
+    
+2. find . -name your_file_name   # 当前目录下查找
+
+3. cat /proc/cpuinfo| grep "processor"| wc -l # 查看逻辑CPU的个数
+
+4. rm -ef * f的作用，特别是centos
+
+   需要注意的是删除操作需要操作用户对该文件具有写权限，具体的权限知识后续经验会详细讲述。</br>
+  -f或--force 　强制删除文件或目录。-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。</br>
+
+5. 获取本机外网出口ip：
+
+   $ wget http://members.3322.org/dyndns/getip</br>
+   $ cat getip</br>
+
+6. awk
+
+	awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。 
+
+	awk '{pattern + action}' {filenames}
+
+	cat /etc/passwd |awk  -F ':'  '{print $1}'  
+
+	awk工作流程是这样的：读取文件，读入有/n换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域,$1表示第一个域,$n表示第n个域,随后开始执行模式所对应的动作action。接着开始读入第二条记录······直到所有的记录都读完
+
+	awk -F: '/root/{print $7}' /etc/passwd 
+
+
+
+
+ 

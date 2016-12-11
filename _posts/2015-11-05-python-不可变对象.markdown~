@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "不可变对象"
+date:   2015-11-05 09:53:49
+categories: 深入python
+tags: 深入python
+---
+python变量赋值（可变与不可变）
+
+1. python中，万物皆对象。python中不存在所谓的传值调用，一切传递的都是对象的引用，也可以认为是传址。
+
+2. python中，对象分为可变(mutable)和不可变(immutable)两种类型，元组（tuple)、数值型（number)、字符串(string)均为不可变对象,
+    而字典型(dictionary)和列表型(list)的对象是可变对象。
+
+3. 不可变类型特点：
+
+　　看下面的例子（例1）
+
+>>>a = 1 #将名字a与内存中值为1的内存绑定在一起
+>>>a = 2 #将名字a与内存中值为2的内存绑定在一起，而不是修改原来a绑定的内存中的值，这时，内存中值为1的内存地址引用计数-1，当引用计数为0时，内存地址被回收
+>>>b = a #变量b执行与a绑定的内存
+>>>b = 3 #创建一个内存值为3的内存地址与变量名字b进行绑定。这是a还是指向值为2的内存地址。
+>>>a,b
+>>>(2,3)
+
+　　这种机制的好处有哪些，弊端有哪些？
+
+    整数为不可变，x,y,z在内存中均指向一个值为1的内存地址，也就是说，x,y,z均指向的是同一个地址，值得注意的是，整形来说，目前仅支持(-1,100)。
+
+总结一下，不可变对象的优缺点。
+
+　　优点是，这样可以减少重复的值对内存空间的占用。
+
+　　缺点呢，如例1所示，我要修改这个变量绑定的值，如果内存中没用存在该值的内存块，那么必须重新开辟一块内存，把新地址与变量名绑定。而不是修改变量原来指向的内存块的值，这回给执行效率带来一定的降低。
+
+4. 下面看一个可变对象的例子（例3）
+
+>>>a = [1]
+>>>b = a #由于列别是可变对象类型，所以传递的时候，与变量名d绑定的内存地址与a绑定的内存地址是同一地址，内存里的值是[1]
+
+>>>b[0] = 2
+>>>a
+[2]
+　　如上所示：变量名a和b是绑定的同一内存地址，对任一个变量对应的值得改变，都会反映到另一个变量上。
+
+　　最后再看一个例子　　
+
+def mutable(b = []): #函数使用了缺省变量
+    b.append(0)
+    return b
+>>>mutable()
+[0]
+>>>mutable()
+[0,0]
+>>>mutable()
+[0,0,0]
+
+　　这里连续三次以缺省值，运行函数3此，每次的结果都不一样，按我们的想想，三次的结果，应该是一样的，都为[0]，但是...
+
+　　那么原因是什么呢，前面说过，一切皆为对象，函数mutable也为一个对象，使用dir()查看函数的属性：
+
+　　dir(mutable)
+
+　　['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+
+　　mutable.__defaults__#函数对象的默认参数
+
+　　([0,0,0],)
+
+     上面我们三次运行了mutable这个函数，如果用mutable.__defaults__来查看函数对象的默认参数变化的话，就会发现问题了。
+
+>>>mutable.__defaults__
+([],)
+>>>mutable()
+[0]
+>>>mutable.__defaults__
+([0],)
+>>>mutable()
+[0,0]
+>>>mutable.__defaults__
+([0,0],)
+
+　　呵呵，终于明白了，原来，每运行一次，函数作为一个对象的内在属性的值发生了变化。导致每次运行的结果不一致。
+
+　　在编程过程中，如果不注意此类问题，很容易造成不可预料的错误。
+
+　　对于类来说也是如此
+
+class b:
+    x = []
+    def set(self):
+        self.x.append(1)
+    def get(self):
+        return self.x
+
+>>>for i in range(3):
+..........a = b()
+..........b.__dict__
+..........a.set()
+..........a.get()
+
+dict_proxy({'__module__': '__main__', 'set': <function set at 0x021ED3D8>, 'get': <function get at 0x021ED420>, '__dict__': <attribute '__dict__' of 'b' objects>, 'x': [], '__weakref__': <attribute '__weakref__' of 'b' objects>, '__doc__': None})
+[1]
+dict_proxy({'__module__': '__main__', 'set': <function set at 0x021ED3D8>, 'get': <function get at 0x021ED420>, '__dict__': <attribute '__dict__' of 'b' objects>, 'x': [1,], '__weakref__': <attribute '__weakref__' of 'b' objects>, '__doc__': None})
+[1, 1]
+dict_proxy({'__module__': '__main__', 'set': <function set at 0x021ED3D8>, 'get': <function get at 0x021ED420>, '__dict__': <attribute '__dict__' of 'b' objects>, 'x': [1, 1], '__weakref__': <attribute '__weakref__' of 'b' objects>, '__doc__': None})
+[1, 1, 1]
+
+仔细观察，类对象内部属性__dict__中'x'对应的值，在每创建一个对象时都发生了变化。也就是说，在每次创建类对象时，变量x引用内存的初始值是不同的，这终要归因于列表(list)的可变性导致的。每次创建对象时，因为列表的可变性，函数对象b的__dict__属性中，x键对应的值，被改变，而不是重新创建，所以出现了上面的结果。
+
+注：http://www.cnblogs.com/evening/archive/2012/04/11/2442788.html

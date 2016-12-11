@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "基本知识"
+date:   2015-10-31 09:53:49
+categories: linux
+tags: linux
+---
+1. find / -name your_file_name  # 全盘查找
+    
+2. find . -name your_file_name   # 当前目录下查找
+
+3. cat /proc/cpuinfo| grep "processor"| wc -l # 查看逻辑CPU的个数
+
+4. rm -ef * f的作用，特别是centos
+
+   需要注意的是删除操作需要操作用户对该文件具有写权限，具体的权限知识后续经验会详细讲述。</br>
+  -f或--force 　强制删除文件或目录。-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。</br>
+
+5. 获取本机外网出口ip：
+
+   $ wget http://members.3322.org/dyndns/getip</br>
+   $ cat getip</br>
+
+
+
+
+ 
