@@ -28,5 +28,5 @@ tags: 技术
    $ git diff 608e120 4abe32e --name-only | xargs zip update.zip
 
 
-10. git rm 误删除文件-----git log 找到离没删文件前最近的commit id；将操作过的其它文件转移；git reset --hard "commit id"
+
  
