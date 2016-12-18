@@ -72,6 +72,23 @@ for a, b in zip(alist, blist):<br>
 
 	排序，从而间接实现对dictionary的排序。这个“元素”可以是key，value或者item。 
 
+12. python 压缩
+
+Traceback (most recent call last):
+  File "/home/xmsong/python/cut_the_hzblog.py", line 52, in module
+    record = gz.readline()
+  File "/usr/lib/python2.5/gzip.py", line 399, in readline
+    c = self.read(readsize)
+  File "/usr/lib/python2.5/gzip.py", line 227, in read
+    self._read(readsize)
+  File "/usr/lib/python2.5/gzip.py", line 275, in _read
+    self._read_eof()
+  File "/usr/lib/python2.5/gzip.py", line 311, in _read_eof
+    raise IOError, "CRC check failed"
+IOError: CRC check failed
+
+显然是压缩文件有问题，解压时，crc校验不通过。	
+
 
 
 
