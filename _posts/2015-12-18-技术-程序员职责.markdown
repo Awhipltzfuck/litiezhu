@@ -2,8 +2,8 @@
 layout: post
 title:  "程序员职责"
 date:   2015-12-18 22:21:49
-categories: 读书
-tags: 读书
+categories: 技术
+tags: 技术
 ---
 1. 对人:
 
