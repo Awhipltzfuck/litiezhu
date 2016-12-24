@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "nginx基本配置"
+date:   2015-10-30 09:53:49
+categories: 技术
+tags: 技术
+---
+
+一 用于调试进程和定位问题的配置项
+
+1.daemon on/off 守护进程
+
+2.master_process on/off 是否fork出work进程
+
+3.error_log /path/file level;
+
+   configure --with-debug
+
+4. events{
+   debug_connection 10.18.207.181;
+   debug_connection 10.18.207.64/24;
+ }
+
+5.worker_rlimit_core size;
+
+ 
+6. working_directory path;
+
+   保证worker进程有权限写入哈
+
+
+注：未完待续。。。
+
+
+
+ 

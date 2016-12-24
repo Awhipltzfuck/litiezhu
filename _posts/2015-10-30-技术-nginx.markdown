@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "基本配置"
+title:  "nginx基本配置"
 date:   2015-10-30 09:53:49
-categories: nginx
-tags: nginx
+categories: 技术
+tags: 技术
 ---
 
 一 用于调试进程和定位问题的配置项
