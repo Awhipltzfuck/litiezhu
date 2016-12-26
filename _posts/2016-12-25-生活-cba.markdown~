@@ -11,8 +11,9 @@ tags: 生活
 	比赛紧张刺激，回来了还久久不能平静！
 
 	未来期待去看nba，去看库里／杜兰特／大西部／字母哥／韦德／波波维奇！
-<img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122501cba.png" | prepend: site.baseurl }}"/>​
-<img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122502cba.png" | prepend: site.baseurl }}"/>​
-<img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122503cba.png" | prepend: site.baseurl }}"/>​
-<img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122504cba.png" | prepend: site.baseurl }}"/>​
-<img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122505cba.png" | prepend: site.baseurl }}"/>​
+
+<img id="sidebar-avatar-img1" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122501cba.png" | prepend: site.baseurl }}"/>​
+<img id="sidebar-avatar-img2" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122502cba.png" | prepend: site.baseurl }}"/>​
+<img id="sidebar-avatar-img3" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122503cba.png" | prepend: site.baseurl }}"/>​
+<img id="sidebar-avatar-img4" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122504cba.png" | prepend: site.baseurl }}"/>​
+<img id="sidebar-avatar-img5" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122505cba.png" | prepend: site.baseurl }}"/>​
