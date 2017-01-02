@@ -21,3 +21,7 @@ tags: 生活
 <img id="sidebar-avatar-img3" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122503cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img4" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122504cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img5" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122505cba.png" | prepend: site.baseurl }}"/>​
+
+
+
+	随机话：那么多同学在北上广深，在那里没日没夜的奋斗，而自己在一个二线小城市写代码，请问有什么理由不好好学习，有什么资格天天逍遥自在？
