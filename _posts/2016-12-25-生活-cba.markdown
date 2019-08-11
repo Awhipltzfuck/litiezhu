@@ -6,22 +6,9 @@ categories: 生活
 tags: 生活
 ---
 
-	球迷太少,票楼太高,球员没有想象的那么高大!
-
-	马布里确实老了,孙大圣鞋子好骚气，老黑运球真库！
-
-	啦啦队绝对给里啊，好美好白，只有妖娆能够形容！
-
-	比赛紧张刺激，回来了还久久不能平静！
-
-	未来期待去看nba，去看库里／杜兰特／大西部／字母哥／韦德／波波维奇！
-
 <img id="sidebar-avatar-img1" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122501cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img2" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122502cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img3" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122503cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img4" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122504cba.png" | prepend: site.baseurl }}"/>​
 <img id="sidebar-avatar-img5" alt="{{ site.tittle }}" src="{{ "/assets/img/2016122505cba.png" | prepend: site.baseurl }}"/>​
 
-
-
-	随机话：那么多同学在北上广深，在那里没日没夜的奋斗，而自己在一个二线小城市写代码，请问有什么理由不好好学习，有什么资格天天逍遥自在？
